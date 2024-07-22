@@ -8,7 +8,9 @@ app.set("view engine", "ejs");
 
 // console.log(app.get("view engin"));   //check engin
 // console.log(app.get("views")); //file  check path
-app.use(express.static("public")); //use extention in path href eg ".hmtl"
+// app.use(express.static("public")); //use extention in path href eg ".hmtl"
+
+// app.set("views", path.resolve(__dirname) + "/foldername"); // folder name if we want change
 
 app.get("/", (req, res) => {
   res.render("index", {
