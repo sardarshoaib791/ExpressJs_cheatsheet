@@ -45,7 +45,7 @@ app.set("view engine", "ejs");
 // });
 
 //=======================> with routing
-app.use(mainRout);
+app.use("/en", mainRout);
 
 app.listen(PORT, () => {
   console.log(`Listing on port ${PORT}`);
