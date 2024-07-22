@@ -23,7 +23,7 @@ router.get("/api/products", (req, res) => {
   res.json([
     {
       id: "123",
-      product: "chrome",
+      product: "chrom",
     },
     {
       id: "1234",
