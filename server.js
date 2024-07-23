@@ -4,15 +4,14 @@ const path = require("path");
 const { env, title } = require("process");
 const PORT = process.env.PORT || 3000;
 const mainRout = require("./router/index");
+const productsrout = require("./router/products");
 
 app.set("view engine", "ejs");
-
+app.use(express.static("public")); //use extention in path href eg ".hmtl"
 // console.log(app.get("view engin"));   //check engin
 // console.log(app.get("views")); //file  check path
 
 //================>> simple one line for view public folder
-
-// app.use(express.static("public")); //use extention in path href eg ".hmtl"
 
 // app.set("views", path.resolve(__dirname) + "/foldername"); // folder name if we want change
 
@@ -46,6 +45,7 @@ app.set("view engine", "ejs");
 
 //=======================> with routing
 app.use("/en", mainRout);
+app.use("/en", productsrout);
 
 app.listen(PORT, () => {
   console.log(`Listing on port ${PORT}`);
