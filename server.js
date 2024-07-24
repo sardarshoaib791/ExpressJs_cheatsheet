@@ -44,8 +44,9 @@ app.use(express.static("public")); //use extention in path href eg ".hmtl"
 // });
 
 //=======================> with routing
-app.use("/en", mainRout);
-app.use("/en", productsrout);
+app.use(mainRout);
+// app.use("/en", productsrout); // ad token
+app.use(productsrout);
 
 app.listen(PORT, () => {
   console.log(`Listing on port ${PORT}`);

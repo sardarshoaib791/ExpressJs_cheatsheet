@@ -19,17 +19,17 @@ router.get("/download", (req, res) => {
   res.download(path.resolve(__dirname) + "/about.html");
 });
 
-router.get("/api/products", apiKeyMiddleware, (req, res) => {
-  res.json([
-    {
-      id: "123",
-      product: "chrom",
-    },
-    {
-      id: "1234",
-      product: "fireFox",
-    },
-  ]);
-});
+// router.get("/api/products", apiKeyMiddleware, (req, res) => {
+//   res.json([
+//     {
+//       id: "123",
+//       product: "chrom",
+//     },
+//     {
+//       id: "1234",
+//       product: "fireFox",
+//     },
+//   ]);
+// });
 
 module.exports = router;
