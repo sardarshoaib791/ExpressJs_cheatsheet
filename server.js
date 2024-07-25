@@ -8,6 +8,7 @@ const productsrout = require("./router/products");
 
 app.set("view engine", "ejs");
 app.use(express.static("public")); //use extention in path href eg ".hmtl"
+app.use(express.json());
 // console.log(app.get("view engin"));   //check engin
 // console.log(app.get("views")); //file  check path
 
