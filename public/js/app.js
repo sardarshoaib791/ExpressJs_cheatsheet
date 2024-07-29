@@ -34,9 +34,20 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchProducts();
-      })
-      .catch((error) => console.error("Error submitting form:", error));
+        setForm({ name: "", price: "" });
+      });
   }
+
+  const deleteProduct = (productId) => {
+    fetch(`/api/products/${productId}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        fetchProducts();
+        console.log(data);
+      });
+  };
 
   function updateForm(event, field) {
     setForm({
@@ -78,7 +89,12 @@ const App = () => {
             key={product.id}
           >
             <div>{`${index + 1} -- ${product.name} --- ${product.price}`}</div>
-            <button className="btn btn-danger">Delete</button>
+            <button
+              className="btn btn-danger"
+              onClick={() => deleteProduct(product.id)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
